@@ -281,9 +281,9 @@ prepTuplestoreResult(FunctionCallInfo fcinfo)
     rsinfo->setDesc = NULL;
 }
 
-PG_FUNCTION_INFO_V1(reservoir_sampler_stars_3gb);
+PG_FUNCTION_INFO_V1(reservoir_sampler_stars);
 Datum
-reservoir_sampler_stars_3gb(PG_FUNCTION_ARGS)
+reservoir_sampler_stars(PG_FUNCTION_ARGS)
 {
     int ret;
     int row;
