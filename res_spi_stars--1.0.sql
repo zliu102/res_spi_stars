@@ -31,7 +31,7 @@ LANGUAGE C STRICT;
 
 
 CREATE FUNCTION reservoir_sampler_stars(sampleSize bigint, tablename text, otherAttribue text,groupby text) 
-RETURNS TABLE (mjd int, linenpixleft int, linesigma bigint, plate int, fiberid int, linenpixright int) 
+RETURNS TABLE (mjd int, linenpixright int, linesigma bigint, plate int, fiberid int, linenpixleft int) 
 AS 'MODULE_PATHNAME','reservoir_sampler_stars' 
 LANGUAGE C STRICT;
 
