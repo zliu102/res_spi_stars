@@ -323,11 +323,11 @@ reservoir_sampler_stars(PG_FUNCTION_ARGS)
 
     //tupdesc = SPI_tuptable->tupdesc;
     tupdesc = CreateTemplateTupleDesc(6, false);
-    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "plate", INT4OID, -1, 0);
+    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "mjd", INT4OID, -1, 0);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "fiberid", INT4OID, -1, 0);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "linesigma", INT8OID, -1, 0);
     //TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_extendedprice", INT4OID, -1, 0);
-    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "mjd", INT4OID, -1, 0);
+    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "plate", INT4OID, -1, 0);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "linenpixleft", INT4OID, -1, 0);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "linenpixright", INT4OID, -1, 0);
     //TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_linenumber", INT4OID, -1, 0);
@@ -345,7 +345,7 @@ reservoir_sampler_stars(PG_FUNCTION_ARGS)
     bool initialized = false;
     for(row = 0; row < SPI_processed; row++){
      
-        int attnum1 = SPI_fnumber(SPI_tuptable->tupdesc, "plate");
+        int attnum1 = SPI_fnumber(SPI_tuptable->tupdesc, "mjd");
         int attnum2 = SPI_fnumber(SPI_tuptable->tupdesc, "fiberid");
         //int attnum3 = SPI_fnumber(SPI_tuptable->tupdesc, "linesigma");
         char* value1 = SPI_getvalue((SPI_tuptable->vals)[row], SPI_tuptable->tupdesc, attnum1);
